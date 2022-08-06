@@ -1,28 +1,26 @@
 import React, { useState } from "react";
 import { ReactSearchAutocomplete } from "react-search-autocomplete";
 import styled from "styled-components";
-
 import data from "../../data";
 import api from "../../services/api";
 
 const SearchBox = (props) => {
   const [locations, setLocations] = useState([]);
 
-  const key = "INSERT YOUR API KEY";
+  const key = "1af64714ce5aed068b935bcab6a506c9";
 
   const handleOnSelect = (location) => {
     props.setLoading(true);
     api
       .get(
-        `/lat=${location.lat}&lon=${location.lon}&&units=metric&appid=${key}`
+        `onecall?lat=${location.lat}&lon=${location.lon}&&units=metric&appid=${key}`
       )
       .then((forecast) => {
         props.setForecast(forecast.data);
-        console.log(forecast);
-        console.log(forecast.data);
+        props.setLoading(false);
       })
       .catch((error) => {
-        console.error(erro);
+        console.error(error);
       });
   };
 
@@ -49,9 +47,15 @@ const SearchBox = (props) => {
 const Container = styled.div`
   margin: 48px;
   text-align: center;
+  @media screen and (max-width: 767px){
+    margin: 20px;
+  }
   & > *:first-child {
     margin: auto;
     width: 700px;
+    @media screen and (max-width: 767px){
+      width: 100%;
+    }
   }
 `;
 

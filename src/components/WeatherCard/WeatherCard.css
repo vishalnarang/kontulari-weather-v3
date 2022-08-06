@@ -1,0 +1,64 @@
+@import url('./../../darkTheme.css');
+
+
+.sub-heading {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.mb-10{
+    margin-bottom: 10px;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: center;
+}
+
+.humidity-wind {
+    color: var(--report-font-color);
+    background: var(--report-background-color);
+    font-size: 20px;
+    width: fit-content;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.daily-report {
+    margin: 20px;
+    padding: 10px 0;
+    background:  var(--report-background-color);
+    border-radius: 20px;
+    color: var(--report-font-color);
+}
+
+.daily-report-container {
+    overflow: hidden;
+    overflow-x: scroll;
+}
+
+.daily-list {
+    width: 140px;
+    color: var(--report-font-color);
+    padding-right: 20px;
+}
+
+.daily-list-item {
+    margin: 10px 0;
+}
+
+@media screen and (max-width: 767px) {
+    .humidity-wind{
+        font-size: 15px;
+    }
+}
+
+.padding-tb10{
+    padding: 10px 0;
+}
+
+.image{
+    width: 30px;
+    border-radius: 20px;
+}

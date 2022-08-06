@@ -1,0 +1,113 @@
+:root {
+    --background-image: url(./assets/background.png);
+    --font-color: #32325d;
+    --report-background-color: #FD657E;
+    --report-font-color: #ffffff;
+}
+
+[data-theme="dark"] {
+    --background-image: '';
+    --background-color: #002E46;
+    --font-color: #FD657E;
+    --report-background-color: #1DE9B6;
+    --report-font-color: #002E46;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--font-color);
+    background-image: var(--background-image);
+}
+
+
+.app-container {
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "neutra", sans-serif;
+    height: 100%;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.heading {
+    color: var(--font-color);
+    font-size: 5vw;
+    font-weight: 600;
+    line-height: 52px;
+    text-align: center;
+}
+
+.dis-flex {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 40vh;
+}
+
+@media screen and (max-width: 767px) {
+    .heading {
+        font-size: 8vw;
+    }
+}
+
+.toggle-theme-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.toggle-theme-wrapper span {
+    font-size: 28px;
+    margin: 0 4px;
+}
+
+.toggle-theme {
+    position: relative;
+    display: inline-block;
+    height: 34px;
+    width: 60px;
+}
+
+.toggle-theme input {
+    display: none;
+}
+
+.slider {
+    background-color: #ccc;
+    position: absolute;
+    cursor: pointer;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    transition: 0.2s;
+}
+
+.slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: 0.4s;
+    width: 26px;
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+input:checked+.slider {
+    background-color: cornflowerblue;
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
